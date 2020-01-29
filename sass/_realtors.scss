@@ -1,0 +1,51 @@
+.topsell {
+    background-color: $color-secondary;
+    grid-column: col-start 7/-1;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-row-gap: 2rem;
+    align-content: center;
+    
+    @media only screen and (max-width: $screen__md) {
+        grid-column: 1/-1;
+        padding: 4rem;
+    }
+    &__realtor {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 5vh;
+        justify-items: center;
+        align-items: center;
+        @media only screen and (max-width: $screen__md) {
+           grid-template-columns: repeat(3, min-content max-content);
+           grid-column-gap: 2.5rem;
+        }
+        @media only screen and (max-width: $screen__md1) {
+            grid-column-gap: 1.5rem;
+         }
+         @media only screen and (max-width: $screen__md2) {
+            grid-template-columns: 1fr;
+            
+        }
+    }
+    &__img {
+        border-radius: 50%;
+        width: 6.5rem;
+    }
+    &__info {
+        h2 {
+            font-size: 1.6rem;
+            color: $color-grey-light-1;
+        }
+        h3 {
+            font-size: 1.3rem;
+            color: $color-grey-light-2;
+        }
+        @media only screen and (max-width: $screen__md2) {
+            margin-top: -1.7rem;
+            display: grid;
+            justify-items: center;
+        }
+    }
+}

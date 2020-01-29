@@ -1,0 +1,63 @@
+// COLOR VARIABLES
+$color-primary: #c69963;
+$color-primary-dark: #B28451;
+
+$color-secondary: #101d2c;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+
+// FONT VARIABLES
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+$screen__largest : 75em;
+$screen__large : 68.75em;
+$screen__large1: 56.25em;
+$screen__md: 50rem;
+$screen__md1: 40.625em;
+$screen__md2: 36.25em;
+$screen__sm1: 31.25em;
+$screen__sm : 25em;
+*,
+::after,::before {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%; //10/16 = 62.5%
+    box-sizing: border-box;
+    @media only screen and (max-width: $screen__largest){
+        font-size: 54%;
+    }
+}
+
+body {
+    font-weight: 300;
+    font-family: $font-primary;
+    line-height: 1.6;
+    color: $color-primary-dark;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns: [side-start] 8rem [side-end full-start] 1fr [center-start]
+     repeat(8, [col-start] minmax(min-content,14rem) [col-end]) [center-end]1fr [full-end];
+    @media only screen and (max-width: $screen__large){
+        grid-template-rows: 6rem calc(100vh - 6rem) min-content 40vw repeat(3, min-content);
+        grid-template-columns:[full-start] 1fr [center-start]
+           repeat(8, [col-start] minmax(min-content,14rem) [col-end]) [center-end]1fr [full-end];
+    }
+    @media only screen and (max-width: $screen__md) {
+        grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content 40vw repeat(3, min-content);
+    }
+    @media only screen and (max-width: $screen__large1){
+        grid-template-rows: 6rem calc(100vh - 6rem) repeat(7,min-content);
+    }
+}
